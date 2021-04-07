@@ -1,0 +1,98 @@
+body {
+background: url(images/Background.png);
+}
+
+p {
+  font-family: "Rum Raisin";
+  font-size: 3vw;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  margin: 1vw;
+}
+
+.filters {
+display: block;
+position: static;
+margin-left: 4vw;
+width: 90vw;
+height: 7vw;
+background: linear-gradient(180deg, #186E7F 0%, #EDB852 121.15%, rgba(184, 130, 32, 0) 160.42%);
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.namesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+ 
+ .containerImages {
+  display: flex;
+  position: relative;
+  width: 18vw;
+  height: 18vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1vw;
+  margin-bottom: 4vw;
+	border-radius: 50%;
+	overflow: hidden;
+  box-shadow: 10px 10px 9px -1px rgba(0, 0, 0, 0.35);
+  background-image: conic-gradient(from -70.11deg at 51.25% 45.83%, #000001 -95.25deg, #EDB852 11.33deg, #FFFFFF 67.79deg, #EDB852 138.17deg, #000001 264.75deg, #EDB852 371.33deg);
+ }  
+  
+.championsImages {
+  width: 15vw;
+  height: 15vw; 
+  border-radius: 50%;
+
+  z-index: 1;
+}
+
+.header {
+width: 100%;
+}
+
+
+.infoContainer {
+  width: 40vw;
+  height: 60vw;
+}
+
+
+#info {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vw;
+  margin-top: -10vw;
+  align-items: center;
+  justify-content: center;
+  background-color:  rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.infoDiv {
+  background-color: black;
+  opacity: 90%;
+  border-radius: 15px;
+  display: flex;
+  margin-top: -20vw;
+  width: 50vw;
+  height: 50vw;
+  flex-direction: row;
+}
+
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    } }
+
+
+

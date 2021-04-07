@@ -1,50 +1,46 @@
-//import data from './data/lol/pruebas.js';
+import data from './data/lol/lol.js';
+//import { }  from '/data.js';
 //import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
-const header = document.querySelector('header');
-const section = document.querySelector('section');
+const dataLol = data.data
+const lolValues = (Object.values(dataLol))
 
-function populateHeader(jsonObj) {
-    const myH1 = document.createElement('h1');
-    myH1.textContent = jsonObj['type'];
-    header.appendChild(myH1);
-  
-    const myPara = document.createElement('p');
-    myPara.textContent = 'Format: ' + jsonObj['format'] + ' // Version: ' + jsonObj['version'];
-    header.appendChild(myPara);
-}
-    console.log (populateHeader, data);
-function showData(jsonObj) {   
-    const champions = jsonObj['data'];
-      for (let i = 0; i < champions.length; i++) {
-      const myArticle = document.createElement('article');
-      const myH2 = document.createElement('h2');
-      const myPara1 = document.createElement('p');
-      const myPara2 = document.createElement('p');
-      const myPara3 = document.createElement('p');
-      const myList = document.createElement('ul');
-  
-      myH2.textContent = data[i].name;
-      myPara1.textContent = 'title: ' + data[i].title;
-      myPara2.textContent = 'blurb: ' + data[i].blurb;
-      myPara3.textContent = 'info: '
-  
-      const about = data[i].info;
-      for (let j = 0; j < about.length; j++) {
-        const listItem = document.createElement('li');
-        listItem.textContent = about[j];
-        myList.appendChild(listItem);
-      }
-  
-      myArticle.appendChild(myH2);
-      myArticle.appendChild(myPara1);
-      myArticle.appendChild(myPara2);
-      myArticle.appendChild(myPara3);
-      myArticle.appendChild(myList);
-  
-      section.appendChild(myArticle);
+const loadData = () => {
+ console.log(Object.values(dataLol))
+ for (let i = 0; i < lolValues.length; i++) { 
+  const namesDiv = document.querySelector('section');
+  const namesContainer = document.createElement('names');
+  const champNames = document.createElement('p');
+  const champImages = document.createElement("img");
+  const champImagesContainer = document.createElement("BUTTON");
+  champImagesContainer.className = "containerImages";
+  namesContainer.className = "namesContainer";
+  champImages.className = "championsImages";
+  champImagesContainer.setAttribute("id", lolValues[i].name);
+  namesDiv.appendChild(namesContainer);
+  namesContainer.appendChild(champNames);
+  namesContainer.appendChild(champImagesContainer);
+  champImagesContainer.appendChild(champImages);
+  champNames.textContent = lolValues[i].name;
+  champImages.src = lolValues[i].splash;
+}}
+loadData();
 
-         }
-  }
+const infoChamps = () => {
+  for (let i=0; i < lolValues.length; i++) {
+    let idChamps = document.getElementById(lolValues[i].name);     
+    idChamps.addEventListener("click", () => {
+    const infoCont = document.getElementById('info');
+    console.log(Object.values(lolValues[i].info));
+    infoCont.style.display = "flex";
+    const infoContainer = document.querySelector("article")
+    const infoDiv = document.createElement('divinfo');
+    const infoChampions = document.createElement('p');
+    infoDiv.className = "infoDiv";
+    infoContainer.appendChild(infoDiv);
+    infoDiv.appendChild(infoChampions);
+    infoChampions.textContent = (Object.values(lolValues[i].info));
+    })
+  }}
 
-console.log(showData, data);
+infoChamps();

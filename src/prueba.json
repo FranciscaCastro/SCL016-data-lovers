@@ -18,15 +18,6 @@
           "magic": 3,
           "difficulty": 4
         },
-        "image": {
-          "full": "Aatrox.png",
-          "sprite": "champion0.png",
-          "group": "champion",
-          "x": 0,
-          "y": 0,
-          "w": 48,
-          "h": 48
-        },
         "tags": [
           "Fighter",
           "Tank"
@@ -69,15 +60,6 @@
           "defense": 4,
           "magic": 8,
           "difficulty": 5
-        },
-        "image": {
-          "full": "Ahri.png",
-          "sprite": "champion0.png",
-          "group": "champion",
-          "x": 48,
-          "y": 0,
-          "w": 48,
-          "h": 48
         },
         "tags": [
           "Mage",
