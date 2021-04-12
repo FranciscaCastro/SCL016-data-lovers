@@ -4,7 +4,6 @@ background: url(images/Background.png);
 
 p {
   font-family: "Rum Raisin";
-  font-size: 3vw;
   white-space: nowrap;
   display: flex;
   justify-content: center;
@@ -31,8 +30,10 @@ background: linear-gradient(180deg, #186E7F 0%, #EDB852 121.15%, rgba(184, 130, 
   flex-direction: column;
   justify-content: center;
  }
+
+
  
- .containerImages {
+ .championsButton {
   display: flex;
   position: relative;
   width: 18vw;
@@ -70,7 +71,7 @@ width: 100%;
   position: fixed;
   display: none;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   margin-top: -10vw;
   align-items: center;
   justify-content: center;
@@ -78,17 +79,43 @@ width: 100%;
   z-index: 3;
 }
 
+.closeButton {
+ display: flex;
+ align-self: flex-start;
+ margin-left: 85%
+}
+
 .infoDiv {
-  background-color: black;
+  background-color: #0299AC;
   opacity: 90%;
-  border-radius: 15px;
   display: flex;
-  margin-top: -20vw;
-  width: 50vw;
-  height: 50vw;
+  width: 30vw;
+  height: 70vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.statsContainer {
+  display: flex;
   flex-direction: row;
 }
 
+.statsDiv {
+  display: flex;
+  width: 15vw;
+  font-size: 80%;
+
+}
+
+.lvlerDiv {
+  display: flex;
+  width: 15vw;
+  font-size: 80%;
+}
+
+#modalInfo {
+  font-size: 70%;
+}
   @media (max-width: 800px) {
     .flex-container {
       flex-direction: column;

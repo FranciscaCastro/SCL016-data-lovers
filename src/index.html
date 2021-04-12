@@ -13,7 +13,11 @@
   <body>
     <img class="header" src="images/Header.png"> 
 
+
 <article id="info">
+  <div id="infoDiv" class="infoDiv">
+    <button id="btnClose" class="closeButton"> X </button>
+  </div>
 </article>
     
 <div class="filters">    
@@ -29,17 +33,20 @@
     </select> 
   </div>
   <div class="buttons">
-    <button>Mago</button>
-    <button>Tirador</button>
-    <button>Asesino</button>
-    <button>Tanque</button>
-    <button>Apoyo</button> 
+    <button id="mage">Mago</button>
+    <button id="marksman">Tirador</button>
+    <button id="assassin">Asesino</button>
+    <button id="tank">Tanque</button>
+    <button id="support">Apoyo</button> 
   </div>
 </div> 
 
-<section class="container">
+<section id="container" class="container">
+<div id="names" class="namesContainer">
+</div>
 </section> 
 
     <script src="main.js" type="module"></script>
   </body>
 </html>
+

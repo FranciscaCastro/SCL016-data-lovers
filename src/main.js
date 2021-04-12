@@ -1,46 +1,112 @@
 import data from './data/lol/lol.js';
-//import { }  from '/data.js';
+// import { filterMage }  from '/data.js';
 //import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
-const dataLol = data.data
-const lolValues = (Object.values(dataLol))
+const dataLol = data.data;
+const lolValues = (Object.values(dataLol));
+const btnMage = document.getElementById("mage");
+const btnMarksman = document.getElementById("marksman");
+const btnAssassin = document.getElementById("assassin");
+const btnTank = document.getElementById("tank");
+const btnSupport = document.getElementById("support");
+const btnClose = document.getElementById("btnClose");
+const champsContainer = document.getElementById('container');
+const infoCont = document.getElementById('info');
+const infoDiv = document.getElementById('infoDiv');
+infoCont.appendChild(infoDiv);
+infoDiv.className = "infoDiv";
+infoDiv.setAttribute("id","infoDiv")
 
+//Mostrar la data inicial en página principal
 const loadData = () => {
  console.log(Object.values(dataLol))
  for (let i = 0; i < lolValues.length; i++) { 
-  const namesDiv = document.querySelector('section');
-  const namesContainer = document.createElement('names');
+  const champsDiv = document.createElement('champsDiv');
+  const champImagesContainer = document.createElement("BUTTON");
+  champImagesContainer.setAttribute("id", lolValues[i].name);
   const champNames = document.createElement('p');
   const champImages = document.createElement("img");
-  const champImagesContainer = document.createElement("BUTTON");
-  champImagesContainer.className = "containerImages";
-  namesContainer.className = "namesContainer";
+  champsDiv.className = "namesContainer";
+  champImagesContainer.className = "championsButton"
   champImages.className = "championsImages";
-  champImagesContainer.setAttribute("id", lolValues[i].name);
-  namesDiv.appendChild(namesContainer);
-  namesContainer.appendChild(champNames);
-  namesContainer.appendChild(champImagesContainer);
+  champsContainer.appendChild(champsDiv);
+  champsDiv.appendChild(champNames);
+  champsDiv.appendChild(champImagesContainer);
   champImagesContainer.appendChild(champImages);
   champNames.textContent = lolValues[i].name;
   champImages.src = lolValues[i].splash;
 }}
 loadData();
 
+//Modal
 const infoChamps = () => {
   for (let i=0; i < lolValues.length; i++) {
-    let idChamps = document.getElementById(lolValues[i].name);     
+    let idChamps = document.getElementById(lolValues[i].name);  
     idChamps.addEventListener("click", () => {
-    const infoCont = document.getElementById('info');
-    console.log(Object.values(lolValues[i].info));
     infoCont.style.display = "flex";
-    const infoContainer = document.querySelector("article")
-    const infoDiv = document.createElement('divinfo');
+    const infor = (lolValues[i].info);
+    const stats = (lolValues[i].stats);
+    const avatar = (lolValues[i].splash);
+    const infoChampionsDiv = document.createElement('infoChampDiv')
+    const champAvatar = document.createElement("avatar")
     const infoChampions = document.createElement('p');
-    infoDiv.className = "infoDiv";
-    infoContainer.appendChild(infoDiv);
-    infoDiv.appendChild(infoChampions);
-    infoChampions.textContent = (Object.values(lolValues[i].info));
-    })
+    const champStatsLvlerDiv = document.createElement('statsLvlerDiv')
+    const champStatsDiv = document.createElement("statsDiv");
+    const champStats = document.createElement('p');
+    const champLvlerDiv = document.createElement ('lvlersDiv');
+    const champLvler = document.createElement('p');
+    infoChampions.setAttribute("id", "modalInfo");
+    infoChampionsDiv.setAttribute("id", "infoChampsDiv")
+    champStatsLvlerDiv.setAttribute("id", "statsLvlerDiv")
+    champStats.setAttribute("id", "stats");
+    champLvler.setAttribute("id", "lvler");
+    champAvatar.className = "avatar";
+    champStatsLvlerDiv.className = "statsContainer";
+    champStatsDiv.className = "statsDiv";
+    champLvlerDiv.className = "lvlerDiv";
+    infoDiv.appendChild(infoChampionsDiv);
+    infoDiv.appendChild(champStatsLvlerDiv);
+    infoChampions.appendChild(champAvatar);
+    champStatsLvlerDiv.appendChild(champStatsDiv);
+    champStatsLvlerDiv.appendChild(champLvlerDiv);
+    infoChampionsDiv.appendChild(infoChampions);
+    champStatsDiv.appendChild(champStats);
+    champLvlerDiv.appendChild(champLvler);
+    champAvatar.src = avatar;
+    infoChampions.innerHTML = "Attack: " + infor.attack + "     Defense: " + infor.defense + "    Magic:" + infor.magic + "    Movespeed :" + stats.movespeed 
+    champStats.innerHTML = "Stats" + "<br>Hp: " + stats.hp + "<br>Mp: " + stats.mp + "<br>Armor: " + stats.armor + "<br>Spellblock: " + stats.spellblock + "<br>HpRegen: " + stats.hpregen + "<br>MpRegen: " + stats.mpregen + "<br>Crit: " + stats.crit + "<br>Attack Dmg: " + stats.attackdamage;
+    champLvler.innerHTML = "Increase per Lvl" + "<br>+" + stats.hpperlevel + "<br>+" + stats.mpperlevel + "<br>+" + stats.armorperlevel + "<br>+" + stats.spellblockperlevel + "<br>+" + stats.hpregenperlevel + "<br>+" + stats.mpregenperlevel + "<br>+" + stats.critperlevel + "<br>+" + stats.attackdamageperlevel;
+   
+  })
   }}
+  infoChamps();
 
-infoChamps();
+//Cerrar y limpiar modal
+const limpiar = () => {
+  const infoDiv = document.getElementById("infoDiv");
+  const infoChampionsDiv = document.getElementById("infoChampsDiv");
+  const champStatsLvlerDiv = document.getElementById("statsLvlerDiv")
+  infoDiv.removeChild(infoChampionsDiv);
+  infoDiv.removeChild(champStatsLvlerDiv)
+}
+
+  btnClose.addEventListener('click', () => {
+  limpiar();
+  infoCont.style.display = 'none';
+  })
+
+
+ const filterMage = () => {
+    const filterMageArr = lolValues.filter((tag) => {
+      if((tag.tags).includes("Mage")){
+        return tag;
+      }
+    })
+    console.log(filterMageArr)
+    return filterMageArr
+  }
+
+  btnMage.addEventListener('click', () => {
+  filterMage(filter); 
+    })
+  
