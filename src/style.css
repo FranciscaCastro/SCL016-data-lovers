@@ -4,12 +4,22 @@ background: url(images/Background.png);
 
 p {
   font-family: "Rum Raisin";
+  font-size: 3vw;
   white-space: nowrap;
   display: flex;
   justify-content: center;
   margin: 1vw;
 }
 
+a {
+    font-family: "Rum Raisin";
+    font-size: 2vw;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    margin: 1vw;
+}
+  
 .filters {
 display: block;
 position: static;
@@ -30,8 +40,6 @@ background: linear-gradient(180deg, #186E7F 0%, #EDB852 121.15%, rgba(184, 130, 
   flex-direction: column;
   justify-content: center;
  }
-
-
  
  .championsButton {
   display: flex;
@@ -60,12 +68,10 @@ background: linear-gradient(180deg, #186E7F 0%, #EDB852 121.15%, rgba(184, 130, 
 width: 100%;
 }
 
-
 .infoContainer {
   width: 40vw;
   height: 60vw;
 }
-
 
 #info {
   position: fixed;
@@ -116,6 +122,13 @@ width: 100%;
 #modalInfo {
   font-size: 70%;
 }
+
+#statsLvlerDiv {
+  display: flex;
+  font-size: 100%;
+}
+
+
   @media (max-width: 800px) {
     .flex-container {
       flex-direction: column;
