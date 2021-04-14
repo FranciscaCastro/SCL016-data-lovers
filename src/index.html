@@ -11,21 +11,22 @@
     </title>
   </head>
   <body>
-    <img class="header" src="images/Header.png"> 
+<div class="header">
+  <img class="img" src="images/Header.png"> 
+</div>
 
 
-<article id="info">
+<div id="info">
   <div id="infoDiv" class="infoDiv">
     <button id="btnClose" class="closeButton"> X </button>
   </div>
-</article>
+</div>
     
 <div class="filters">    
   <div class="input">
-    <input type="text" class="searchChampion" placeholder="Búsqueda por nombre">
     <select name="order">
-      <option value="1">Alfabeto Ascendente (A-Z)</option> 
-      <option value="2">Alfabeto Descendente (Z-A)</option> 
+      <option id="sort" value="1">Alfabeto Ascendente (A-Z)</option> 
+      <option id="sortInv" value="2">Alfabeto Descendente (Z-A)</option> 
       <option value="3">Puntos de Vida</option>
   <div class="filters">
   <div class="filters">
@@ -33,11 +34,12 @@
     </select> 
   </div>
   <div class="buttons">
-    <button id="mage">Mago</button>
-    <button id="marksman">Tirador</button>
-    <button id="assassin">Asesino</button>
-    <button id="tank">Tanque</button>
-    <button id="support">Apoyo</button> 
+    <button class="button" id="mage"><b>Mage</b></button>
+    <button class="button" id="marksman"><b>Marksman</b></button>
+    <button class="button" id="assassin"><b>Assassin</b></button>
+    <button class="button" id="tank"><b>Tank</b></button>
+    <button class="button" id="support"><b>Support</b></button> 
+    <button class="button" id="all"><b>All</b></button>
   </div>
 </div> 
 
@@ -46,6 +48,7 @@
 </div>
 </section> 
 
+   
     <script src="main.js" type="module"></script>
   </body>
 </html>
