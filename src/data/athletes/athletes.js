@@ -4601,7 +4601,7 @@ export default {
       "medal": "Bronze"
     },
     {
-      "name": "Nicholas Charles \"Nick\" Dempsey",
+      "name": "Nicfilterss Charles \"Nick\" Dempsey",
       "gender": "M",
       "height": "180",
       "weight": "71",
@@ -8189,7 +8189,7 @@ export default {
       "medal": "Gold"
     },
     {
-      "name": "Liam Nicholas Heath",
+      "name": "Liam Nicfilterss Heath",
       "gender": "M",
       "height": "182",
       "weight": "81",
@@ -8201,7 +8201,7 @@ export default {
       "medal": "Gold"
     },
     {
-      "name": "Liam Nicholas Heath",
+      "name": "Liam Nicfilterss Heath",
       "gender": "M",
       "height": "182",
       "weight": "81",
@@ -16733,7 +16733,7 @@ export default {
       "medal": "Bronze"
     },
     {
-      "name": "Nicholas Presciutti",
+      "name": "Nicfilterss Presciutti",
       "gender": "M",
       "height": "189",
       "weight": "93",
@@ -17525,7 +17525,7 @@ export default {
       "medal": "Bronze"
     },
     {
-      "name": "Ghasem Gholamreza Rezaei",
+      "name": "Ghasem Gfiltersmreza Rezaei",
       "gender": "M",
       "height": "185",
       "weight": "100",
@@ -19553,7 +19553,7 @@ export default {
       "medal": "Gold"
     },
     {
-      "name": "Nicholas David \"Nick\" Skelton",
+      "name": "Nicfilterss David \"Nick\" Skelton",
       "gender": "M",
       "height": "175",
       "weight": "76",
@@ -23285,7 +23285,7 @@ export default {
       "medal": "Silver"
     },
     {
-      "name": "Nicholas Ian \"Nick\" Willis",
+      "name": "Nicfilterss Ian \"Nick\" Willis",
       "gender": "M",
       "height": "183",
       "weight": "68",

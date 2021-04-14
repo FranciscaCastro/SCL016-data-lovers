@@ -17,16 +17,16 @@ const infoDiv = document.getElementById('infoDiv');
 infoCont.appendChild(infoDiv);
 infoDiv.className = 'infoDiv';
 infoDiv.setAttribute('id','infoDiv')
+
 //Mostrar la data inicial en página principal
-const loadData = (hola) => {
+const loadData = (filters) => {
   const lolValues = dataValues.filter((tag) => {
-    if((tag.tags).includes(hola)){
+    if((tag.tags).includes(filters)){
       return tag;
         }
-    else if (hola == null) {
+    else if (filters == null) {
       return tag;
-    }
-    
+    }    
   }) 
   for (let i = 0; i < lolValues.length; i++) { 
   const champsDiv = document.createElement('champsDiv');
@@ -48,15 +48,14 @@ loadData();
 
 
 //Modal
-const infoChamps = (hola) => {
+const infoChamps = (filters) => {
   const lolValues = dataValues.filter((tag) => {
-    if((tag.tags).includes(hola)){
+    if((tag.tags).includes(filters)){
       return tag;
         }
-    else if (hola == null) {
+    else if (filters == null) {
       return tag;
-    }
-    
+    }    
   }) 
   for (let i=0; i < lolValues.length; i++) {
     let idChamps = document.getElementById(lolValues[i].name);  
@@ -107,19 +106,19 @@ const limpiar = () => {
   infoDiv.removeChild(champStatsLvlerDiv)
 }
 
-  btnClose.addEventListener('click', () => {
+btnClose.addEventListener('click', () => {
   limpiar();
   infoCont.style.display = 'none';
   })
 
-  btnAssassin.addEventListener('click', (btnAssasin) => {
+btnAssassin.addEventListener('click', (btnAssasin) => {
     champsContainer.innerHTML=''
     btnAssasin ='Assassin'
    loadData(btnAssasin);
    infoChamps(btnAssasin);
   })
 
-  btnTank.addEventListener('click', (btnTank) => {
+btnTank.addEventListener('click', (btnTank) => {
     champsContainer.innerHTML=''
     btnTank = 'Tank'
    loadData(btnTank);
@@ -149,5 +148,3 @@ btnAll.addEventListener('click', (btnAll) => {
  loadData();
  infoChamps();
 })
-  
-
